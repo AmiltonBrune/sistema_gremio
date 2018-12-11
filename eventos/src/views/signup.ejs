@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cadastro - Kidemais</title>
+  </head>
+  <body>
+    <section class="material-half-bg">
+      <div class="cover"></div>
+    </section>
+    <section class="register-content">
+      <div class="logo"> 
+        <h1></h1>
+      </div>
+      <% if(message) { %>
+        <% if(error) { %>
+          <div class="alert alert-dismissible alert-danger">
+            <button class="close" type="button" data-dismiss="alert">x</button>
+            <a href="#" class="alert-link"><%= message %></a>
+          </div>
+        <%}%>
+      <%}%>
+      <div class="register-box" style="border-radius: 15px">
+        <form class="register-form" action="/users/signup" method="POST">
+          <div style="color: #02151e!important">
+            <h3 class="register-head"><i class="fa fa-lg fa-fw fa-user"></i>CADASTRO</h3>
+          </div>
+          <div class="form-group">
+                <label class="control-label">NOME</label>
+                <input class="form-control" name="nome" type="text" placeholder="digite seu nome" autofocus>
+              </div>
+              <div class="form-group">
+                    <label class="control-label">SOBRENOME</label>
+                    <input class="form-control" name="sobrenome" type="text" placeholder="digite o seu sobrenome">
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label">NOME USUÁRIO</label>
+                      <input class="form-control" name="username" type="text" placeholder="digite o seu nome de usuário">
+                    </div>
+          <div class="form-group">
+                <label class="control-label">EMAIL</label>
+                <input class="form-control" name="email" type="email" placeholder="digite o seu email">
+              </div>
+          <div class="form-group">
+            <label class="control-label">SENHA</label>
+            <input class="form-control" name="password" type="password" placeholder="digite sua senha">
+          </div>
+          
+          <div class="form-group btn-container">
+            <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" type="submit"><i class="fa fa-sign-in fa-lg fa-fw"></i>ENVIAR</button>
+          </div>
+          <div class="form-group mt-3">
+                <p class="semibold-text mb-0"><a href="/"><i class="fa fa-angle-left fa-fw"></i> Voltar para Login</a></p>
+              </div>
+        </form>
+      </div><!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Confirmação Envio</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Obrigado por se cadastrar, foi enviado um email para você com a confirmação do seu cadastro.</p>
+              <p>Verifique a sua caixa de entrada ou seu spam.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+              <a href="/" type="button" class="btn btn-primary" >Ok</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- Essential javascripts for application to work-->
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="/js/plugins/pace.min.js"></script>
+    <script type="text/javascript">
+      // register Page Flipbox control
+      $('.register-content [data-toggle="flip"]').click(function() {
+      	$('.register-box').toggleClass('flipped');
+      	return false;
+      });
+    </script>
+  </body>
+</html>

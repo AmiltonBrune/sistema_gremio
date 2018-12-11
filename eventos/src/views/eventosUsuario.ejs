@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>Eventos
+  </title>
+  <meta name="description" content="Download free amazing responsive Fashion Blog template." />
+  <meta name="keywords" content="free, responsive, blog, fashion, web site, template" />
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsee.css">
+  <link rel="stylesheet" href="css/eventosUsuario.css">
+  <!-- CUSTOM STYLE -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,latin-ext' rel='stylesheet'
+    type='text/css'>
+  <link href="https://fonts.google.com/specimen/Alegreya+Sans+SC?selection.family=Alegreya+Sans+SC" type='text/css'>  
+  <link rel="stylesheet" href="css/template-style.css">
+  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <script type="text/javascript" src="js/responsee.js"></script>
+  <script type="text/javascript" src="js/blog.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+  <!--[if lt IE 9]> 
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+      <![endif]-->
+</head>
+
+<body class="size-1140">
+  <!-- TOP NAV WITH LOGO -->
+  <header class="margin-bottom">
+    <div class="line" style="padding: 0px;">
+      <nav>
+        <div class="top-nav">
+          <p class="nav-text"></p>
+          <a class="logo" href="/eventosUsuario">
+            Kidemais <span>Eventos</span>
+          </a>
+
+          <ul class="top-ul right">
+            <li>
+              <a href="/blog">Blog</a>
+            </li>
+            <li class="active-item">
+              <a href="/eventosUsuario">Eventos</a>
+            </li>
+            <li>
+              <a href="archive.html" >Postagens Antigas</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- MAIN SECTION -->
+
+  <section id="home-section" class="line" style="text-align: center">
+
+    <h1 style="color: #00c1d5;text-align: left;margin-left: 50px;margin-top: 50px">
+      <i class="far fa-calendar-alt" style="color: #00c1d5!important"></i> Eventos</h1>
+
+    <div class="row" style="padding: 30px">
+        <% docs.forEach(function(evento){ %>
+      <div class="tile">
+
+        <div class="card">
+          <img src="<%= evento.path %>" />
+          <div class="info">
+            <h1 style="color: #00c1d5"><%= evento.nome %></h1>
+            <br>
+            <h4 style="text-align: left; color: white">
+                <i class="far fa-calendar-alt"></i>
+                 <%= evento.data%></h4>
+                 <br>
+            <h5 style="color: white"><p><%= evento.descricao %></p></h5>
+            <br>
+            <label class="btn" for="modal-toggle">Inscreva-se</label>
+          </div>
+        </div>
+      </div>
+      
+      <input id="modal-toggle" type="checkbox">
+      <label class="modal-backdrop" for="modal-toggle"></label>
+      <div class="modal-content">
+        <label class="modal-close-btn" for="modal-toggle">
+          <svg width="50" height="50">
+            <line x1="10" y1="10" x2="40" y2="40" />
+            <line x1="40" y1="10" x2="10" y2="40" />
+          </svg>
+        </label>
+        <div class="tabs">
+  
+          <div class="registration-form">
+            <header>
+              <h1>Cadastro Evento</h1>
+              <p>Informações de contato</p>
+            </header>
+            <form action="/eventosUsuario/cadastroUsuarioEvento" method="POST">
+              <div class="input-section email-section">
+                <input class="email" type="text" value="<%= evento.nome %>" name="evento" autocomplete="off" />
+                <div class="animated-button" style="background-color: #0077c8"><span class="icon-paper-plane"><i class="fas fa-envelope"></i></i></span><span
+                    class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
+              </div>
+              <div class="input-section email-section">
+                <input class="email" type="email" placeholder="DIGITE AQUI SEU EMAIL" autocomplete="off" name="email" />
+                <div class="animated-button" style="background-color: #0077c8"><span class="icon-paper-plane"><i class="fas fa-envelope"></i></i></span><span
+                    class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
+              </div>
+              <div class="input-section password-section folded">
+                <input class="password" type="text" placeholder="DIGITE AQUI O SEU NOME" name="nome" />
+                <div class="animated-button" style="background-color: #612c51;"><span class="icon-lock-p"><i class="fas fa-user"></i></i></span><span class="next-button password"><i
+                      class="fa fa-arrow-up"></i></span></div>
+              </div>
+              <div class="input-section repeat-password-section folded">
+                <input class="repeat-password" type="text" name="telefone" onkeypress="mascara(this, '## #####-####')"
+                  maxlength="13" placeholder="DIGUTE AQUI SEU NUMERO DE CELULAR PARA CONTATO"  />
+                <div class="animated-button" style="background-color: #f2a900"><span class="icon-repeat-lock"><i class="fa fa-lock"></i></span><span class="next-button repeat-password"><i
+                      class="fa fa-paper-plane"></i></span></div>
+              </div>
+              <div>
+                 <button class="success btn" type="submit">CADASTRO REALIZADO COM SUCESSO</button>
+                
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+     
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <div class="line">
+    <footer>
+      <div class="s-12 l-8">
+        <p style="color: white">
+          Copyright 2018
+        </p>
+      </div>
+      <div class="s-12 l-4">
+        <a class="right" href="#" title="Responsive framework" style="color: white">Desenvolvido<br>
+          por Kidemais
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script language="JavaScript">
+    function mascara(t, mask) {
+      var i = t.value.length;
+      var saida = mask.substring(1, 0);
+      var texto = mask.substring(i)
+      if (texto.substring(0, 1) != saida) {
+        t.value += texto.substring(0, 1);
+      }
+    }
+  </script>
+  <script>
+    var $cell = $('.card');
+
+    //open and close card when clicked on card
+    $cell.find('.js-expander').click(function () {
+
+      var $thisCell = $(this).closest('.card');
+
+      if ($thisCell.hasClass('is-collapsed')) {
+        $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+        $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+
+        if ($cell.not($thisCell).hasClass('is-inactive')) {
+          //do nothing
+        } else {
+          $cell.not($thisCell).addClass('is-inactive');
+        }
+
+      } else {
+        $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+        $cell.not($thisCell).removeClass('is-inactive');
+      }
+    });
+  </script>
+  <script>
+    $('.email').on("change keyup paste",
+      function () {
+        if ($(this).val()) {
+          $('.icon-paper-plane').addClass("next");
+        } else {
+          $('.icon-paper-plane').removeClass("next");
+        }
+      }
+    );
+
+    $('.next-button').hover(
+      function () {
+        $(this).css('cursor', 'pointer');
+      }
+    );
+
+    $('.next-button.email').click(
+      function () {
+        console.log("Something");
+        $('.email-section').addClass("fold-up");
+        $('.password-section').removeClass("folded");
+      }
+    );
+
+    $('.password').on("change keyup paste",
+      function () {
+        if ($(this).val()) {
+          $('.icon-lock-p').addClass("next");
+        } else {
+          $('.icon-lock-p').removeClass("next");
+        }
+      }
+    );
+
+    $('.next-button').hover(
+      function () {
+        $(this).css('cursor', 'pointer');
+      }
+    );
+
+    $('.next-button.password').click(
+      function () {
+        console.log("Something");
+        $('.password-section').addClass("fold-up");
+        $('.repeat-password-section').removeClass("folded");
+      }
+    );
+
+    $('.repeat-password').on("change keyup paste",
+      function () {
+        if ($(this).val()) {
+          $('.icon-repeat-lock').addClass("next");
+        } else {
+          $('.icon-repeat-lock').removeClass("next");
+        }
+      }
+    );
+
+    $('.next-button.repeat-password').click(
+      function () {
+        console.log("Something");
+        $('.repeat-password-section').addClass("fold-up");
+        $('.success').css("marginTop", 0);
+      }
+    );
+  </script>
+</body>
+
+</html>

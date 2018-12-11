@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+  <body class="app sidebar-mini rtl">
+    <!-- Navbar-->
+    <header class="app-header"><a class="dash-header__logo" href="/index" style="padding: 10px;">KIDEMAIS</a>
+      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" style="padding: 10px;" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        <!--Notification Menu-->
+        <li class="" style="padding: 10px;">
+          <label class="app-nav__item" style="font-size: 15px">Olá <%= nome %> <%= sobrenome %>, seja bem vindo</label>
+        </li>
+        <!-- User Menu-->
+        <li class="dropdown" style="padding: 10px;"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fas fa-user-circle fa-lg"></i></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li><a class="btn dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Configurações</a></li>
+            <li><a class=" btn dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
+            <form action="/logoff" method="POST">
+                <li><button class="btn dropdown-item" type="submit"><i class="fas fa-sign-out-alt fa-lg"></i> Sair</button></li>            
+            </form>
+            
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar" style="padding-top: 70px;">
+        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/img/logo.svg" alt="User Image">
+         
+        </div>
+      <ul class="app-menu">
+        <li><a class="app-menu__item " href="/dashboard"><i class="app-menu__icon fa fa-home fa-lg"></i><span class="app-menu__label">Tela Incial</span></a></li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview" ><i class="app-menu__icon far fa-calendar-alt fa-lg" aria-hidden="true"></i><span class="app-menu__label">Eventos</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="/eventos/cadastroEvento"><i class="icon far fa-calendar-plus fa-lg" aria-hidden="true"></i> Cadastrar novo evento</a></li>
+            <li><a class="treeview-item" href="/eventos"><i class="icon fas fa-list-ol" aria-hidden="true"></i> Lista de eventos</a></li>
+            <li><a class="treeview-item" href="ui-cards.html"><i class="icon fas fa-users fa-lg"></i>Lista geral de usuários cadastrados</a></li>
+          </ul>
+        </li>
+        <li class="treeview"><a class="app-menu__item active" href="#" data-toggle="treeview" ><i class="app-menu__icon fas fa-door-open fa-lg" aria-hidden="true"></i><span class="app-menu__label">Salas</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="/salas/cadastroSala"><i class="icon far fa-plus-square" aria-hidden="true"></i> Cadastrar nova sala</a></li>
+            <li><a class="treeview-item" href="/salas"><i class="icon fas fa-list-ol" aria-hidden="true"></i> Lista de salas</a></li>
+          </ul>
+        </li>
+        <li><a class="app-menu__item" href="/graficos"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Gráficos</span></a></li>
+        <li class="treeview"><a class="app-menu__item" href="" data-toggle="treeview"><i class="app-menu__icon fab fa-blogger fa-lg"></i><span class="app-menu__label">Blog</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <ul class="treeview-menu">
+            <li><a class="treeview-item" href="form-components.html"><i class="icon far fa-newspaper fa-lg"></i> Notícias</a></li>
+            <li><a class="treeview-item" href="form-custom.html"><i class="icon fas fa-globe fa-lg"></i> Novidades</a></li>
+          </ul>
+        </li> 
+      </ul>
+    </aside>>
+    <main class="app-content">
+            <div class="app-title">
+                    <div>
+                      <h1 style="margin-top: 15px;"><i class="fas fa-cubes"></i>
+                        <%= title %>
+                      </h1>
+                    </div>
+                  </div>
+                  <div class="tile">
+                        <form action="<%= action %>" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label class="control-label">Nome</label>
+                                <input class="form-control" type="text" value="<%= doc.nome %>" name="nome" type="text" placeholder="Escreva o nome da sala">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Quantidade De Pessoas</label>
+                                <input class="form-control" type="number" value="<%= doc.quantidadePessoas %>" name="quantidadePessoas" placeholder="Escreva a quantidade de pessoas">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Localização da Sala</label>
+                                <input class="form-control" type="text" value="<%= doc.localizacao %>" name="localizacao" placeholder="Escreva a localização ou endereço">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Foto</label>
+                                <input class="form-control" type="file" value="<%= doc.path %>" name="photo">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Descrição</label>
+                                <textarea class="form-control" rows="4" value="<%= doc.descricaoSala %>" type="text" name="descricaoSala"
+                                    placeholder="Escreva detalhes sobre a sala"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="/salas" type="button" class="btn btn-secondary" ><i class="fa fa-fw fa-lg fa-times-circle"></i>Sair</a>
+                                <button type="submit" class="btn btn-primary "><i class="fa fa-fw fa-lg fa-check-circle"></i>Salvar</button>
+                            </div>
+
+                        </form>
+                  </div>
+    </main>
+    <!-- Essential javascripts for application to work-->
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="/js/plugins/pace.min.js"></script>
+    <!-- Page specific javascripts-->
+    <script type="text/javascript" src="/js/plugins/chart.js"></script>
+   
+  </body>
+</html>
