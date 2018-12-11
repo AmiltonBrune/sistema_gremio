@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/blog.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -79,25 +80,25 @@
       </ul>
     </div>
     <div class="cards">
-      <% docs.forEach(function(post){ %>
+      <% docs.forEach(function(posts){ %>
       <div class="card">
-        <img src="<%= post.path %>">
+        <img src="<%= posts.path %>">
         <div class="card-title">
           <a href="#" class="toggle-info btn" style="background: #0096a0;color: #ffffff;">
             <i class="fas fa-angle-down fa-lg"></i>
           </a>
           <h2>
-            <%= post.nome %>
+            <%= posts.nome %>
           </h2>
         </div>
         <div class="card-flap flap1">
           <div class="card-description">
-            <%= post.descricao %>
+            <%= posts.descricao %>
           </div>
           <div class="card-flap flap2">
             <div class="card-actions">
               <button class="btn btn-success" href=""><i class="fa fa-lg fa-edit"></i></button>
-              <button class="btn btn-primary" href="" onclick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-lg fa-trash"></i></button>
+              <a class="btn btn-primary" href="/post/delete/<%= posts._id%>" onclick="return confirm('Tem certeza que deseja excluir?');"><i class="fa fa-lg fa-trash"></i></a>
             </div>
           </div>
         </div>
@@ -142,15 +143,21 @@
 
 
   </main>
-  <!-- Essential javascripts for application to work-->
-  <script src="/js/jquery-3.2.1.min.js"></script>
-  <script src="/js/popper.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/main.js"></script>
-  <!-- The javascript plugin to display page loading on top-->
-  <script src="/js/plugins/pace.min.js"></script>
-  <!-- Page specific javascripts-->
-  <script type="text/javascript" src="/js/plugins/chart.js"></script>
+ <!-- Essential javascripts for application to work-->
+ <script src="/js/jquery-3.2.1.min.js"></script>
+ <script src="/js/popper.min.js"></script>
+ <script src="/js/bootstrap.min.js"></script>
+ <script src="/js/main.js"></script>
+ <!-- The javascript plugin to display page loading on top-->
+ <script src="/js/plugins/pace.min.js"></script>
+ <!-- Page specific javascripts-->
+ <script type="text/javascript" src="/js/plugins/chart.js"></script>
+
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+ <script type="text/javascript" src="/js/common.js"></script>
+ <script type="text/javascript" src="/js/te.js"></script>
 
 </body>
 

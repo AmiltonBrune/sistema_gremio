@@ -31,13 +31,14 @@ router.post('/cadastroPost', function (req, res) {
     var nome = req.body.nome;
     var descricao = req.body.descricao;
     var dataAtual = new Date;
-    var meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    var meses = ['jan', 'fev', 'mar', 'abr', 'maio', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
     var mes = meses[dataAtual.getMonth()];
     var dia = dataAtual.getDate();
-    var data = dia + ' de ' + mes;
+    var dataDia = dia;
+    var dataMes = mes;
     var fullPath = "files/" + req.file.filename;
     var path = fullPath;
-    db.adicionaPost({ nome, descricao, data, path}, (err, result) => {
+    db.adicionaPost({ nome, descricao, dataDia, dataMes, path}, (err, result) => {
       if (err) { return console.log(err); }
       res.redirect('/post');
     })

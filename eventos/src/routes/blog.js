@@ -8,7 +8,7 @@ router.get('/', global.authenticationMiddleware(), function(req, res, next){
   var sobrenome = req.user.sobrenome;
   db.findAll((e, docs) => {
       if(e) { return console.log(e); }
-      db.qtdEventos((e, doc)=>{
+      db.todosPosts((e, doc)=>{
         if(e) { return console.log(e); }
         res.render('blog', { title: 'Tela Inicial', docs: docs, nome: nome, sobrenome: sobrenome,doc: doc });
       })
