@@ -28,9 +28,9 @@
       <![endif]-->
 </head>
 
-<body class="size-1140">
+<body class="size-1140" style="margin-top: 8%">
   <!-- TOP NAV WITH LOGO -->
-  <header class="margin-bottom">
+  <header class="margin-bottom alteracoesMarcel">
     <div class="line" style="padding: 0px;">
       <nav>
         <div class="top-nav">
@@ -40,14 +40,20 @@
           </a>
 
           <ul class="top-ul right">
+              <li>
+                  <a href="http://35.225.175.34/">Início</a>
+               </li>
+               <li>
+                  <a href="http://35.225.175.34/index.php/blog/">Grêmio</a>
+               </li>
+               <li>
+                  <a href="http://35.225.175.34/index.php/loja/">Loja</a>
+               </li>
             <li>
               <a href="/blog">Blog</a>
             </li>
             <li class="active-item">
               <a href="/eventosUsuario">Eventos</a>
-            </li>
-            <li>
-              <a href="archive.html" >Postagens Antigas</a>
             </li>
           </ul>
         </div>
@@ -74,7 +80,7 @@
                 <i class="far fa-calendar-alt"></i>
                  <%= evento.data%></h4>
                  <br>
-            <h5 style="color: white"><p><%= evento.descricao %></p></h5>
+            <h5 style="color: white"><p ><%= evento.descricao %></p></h5>
             <br>
             <label class="btn" for="modal-toggle">Inscreva-se</label>
           </div>

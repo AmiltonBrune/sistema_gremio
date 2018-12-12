@@ -113,25 +113,27 @@
       <div class="row">
         <div class="col-md-6">
           <div class="tile">
-            <h3 class="tile-title">Vendas Mensais</h3>
+            <h3 class="tile-title">Envolvimento Sites</h3>
             <div class="embed-responsive embed-responsive-16by9">
-              <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
+              <canvas class="embed-responsive-item" id="lineChartSites"></canvas>
+            </div>
+            <div class="tile-footer" style="text-align: center">
+                <span class="badge badge-success" style="background-color: #59d173;font-size: 15px;">Eventos Disponíveis</span>
+                <span class="badge badge-danger" style="background-color: #F7464A;font-size: 15px;">Eventos Encerrados</span>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+
+       <div class="col-md-6">
           <div class="tile">
-            <h3 class="tile-title">Eventos</h3>
+            <h3 class="tile-title">Envolvimento Eventos</h3>
             <div class="embed-responsive embed-responsive-16by9">
-              <canvas class="embed-responsive-item" id="pieChartDemo"></canvas>
+                <canvas class="embed-responsive-item" id="barChartDemo"></canvas>
             </div>
-            <div class="grafico_badge">
+            <div class="tile-footer" style="text-align: center">
                 <span class="badge badge-success" style="background-color: #59d173;font-size: 15px;">Eventos Disponíveis</span>
-            </div>
-            <div class="grafico_badge">
                 <span class="badge badge-danger" style="background-color: #F7464A;font-size: 15px;">Eventos Encerrados</span>
             </div>
-            
           </div>
         </div>
       </div>
@@ -158,6 +160,31 @@
       			pointStrokeColor: "#fff",
       			pointHighlightFill: "#fff",
       			pointHighlightStroke: "rgba(220,220,220,1)",
+      			data: [165, 159, 180, 300, 156]
+      		},
+      		{
+      			label: "Meu segundo dataset",
+      			fillColor: "rgba(151,187,205,0.2)",
+      			strokeColor: "rgba(151,187,205,1)",
+      			pointColor: "rgba(151,187,205,1)",
+      			pointStrokeColor: "#fff",
+      			pointHighlightFill: "#fff",
+      			pointHighlightStroke: "rgba(151,187,205,1)",
+      			data: [128, 148, 140, 119, 186]
+      		}
+      	]
+      };
+      var data1 = {
+      	labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio"],
+      	datasets: [
+      		{
+      			label: "Meu primiro dataset",
+      			fillColor: "rgba(220,220,220,0.2)",
+      			strokeColor: "rgba(220,220,220,1)",
+      			pointColor: "rgba(220,220,220,1)",
+      			pointStrokeColor: "#fff",
+      			pointHighlightFill: "#fff",
+      			pointHighlightStroke: "rgba(220,220,220,1)",
       			data: [65, 59, 80, 81, 56]
       		},
       		{
@@ -172,27 +199,14 @@
       		}
       	]
       };
-      var pdata = [
-      	{
-      		value: <%=doc%>,
-      		color: "#59d173",
-      		highlight: "#59d15b",
-          label: "Eventos Disponíves",
-          display: true,
-      	},
-      	{
-      		value: 1,
-      		color:"#F7464A",
-      		highlight: "#FF5A5E",
-      		label: "Eventos Encerrados"
-      	}
-      ]
-      
-      var ctxl = $("#lineChartDemo").get(0).getContext("2d");
+           
+      var ctxl = $("#lineChartSites").get(0).getContext("2d");
       var lineChart = new Chart(ctxl).Line(data);
-      
-      var ctxp = $("#pieChartDemo").get(0).getContext("2d");
-      var pieChart = new Chart(ctxp).Pie(pdata);
+
+      var ctxb = $("#barChartDemo").get(0).getContext("2d");
+      var barChart = new Chart(ctxb).Bar(data1);
+    
     </script>
+    
   </body>
-</html>
+</html>su
