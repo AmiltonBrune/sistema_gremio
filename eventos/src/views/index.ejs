@@ -13,7 +13,7 @@
   </head>
   <body class="app sidebar-mini rtl">
     <!-- Navbar-->
-    <header class="app-header"><a class="dash-header__logo" href="/index" style="padding: 10px;">KIDEMAIS</a>
+    <header class="app-header"><a class="dash-header__logo" href="/dashboard" style="padding: 10px;">KIDEMAIS</a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" style="padding: 10px;" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
@@ -58,8 +58,8 @@
         <li><a class="app-menu__item" href="/graficos"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Gráficos</span></a></li>
         <li class="treeview"><a class="app-menu__item" href="" data-toggle="treeview"><i class="app-menu__icon fab fa-blogger fa-lg"></i><span class="app-menu__label">Blog</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="form-components.html"><i class="icon far fa-newspaper fa-lg"></i> Notícias</a></li>
-            <li><a class="treeview-item" href="form-custom.html"><i class="icon fas fa-globe fa-lg"></i> Novidades</a></li>
+            <li><a class="treeview-item" href="/post"><i class="icon far fa-newspaper fa-lg"></i>Postagens</a></li>
+            <li><a class="treeview-item"  href="/post"><i class="icon fas fa-globe fa-lg"></i>Novidades</a></li>
           </ul>
         </li> 
       </ul>
@@ -118,8 +118,8 @@
               <canvas class="embed-responsive-item" id="lineChartSites"></canvas>
             </div>
             <div class="tile-footer" style="text-align: center">
-                <span class="badge badge-success" style="background-color: #59d173;font-size: 15px;">Eventos Disponíveis</span>
-                <span class="badge badge-danger" style="background-color: #F7464A;font-size: 15px;">Eventos Encerrados</span>
+                <span class="badge badge-success" style="background-color:rgba(2, 21, 30,1);font-size: 15px;">Curtidas</span>
+                <span class="badge badge-danger" style="background-color: rgba(243, 166, 28);font-size: 15px;">Visualizações</span>
             </div>
           </div>
         </div>
@@ -131,8 +131,8 @@
                 <canvas class="embed-responsive-item" id="barChartDemo"></canvas>
             </div>
             <div class="tile-footer" style="text-align: center">
-                <span class="badge badge-success" style="background-color: #59d173;font-size: 15px;">Eventos Disponíveis</span>
-                <span class="badge badge-danger" style="background-color: #F7464A;font-size: 15px;">Eventos Encerrados</span>
+                <span class="badge badge-success" style="background-color: rgba(2, 21, 30,1);font-size: 15px;">Eventos Disponíveis</span>
+                <span class="badge badge-danger" style="background-color: rgba(243, 166, 28);font-size: 15px;">Eventos Encerrados</span>
             </div>
           </div>
         </div>
@@ -153,23 +153,23 @@
       	labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio"],
       	datasets: [
       		{
-      			label: "Meu primiro dataset",
-      			fillColor: "rgba(220,220,220,0.2)",
-      			strokeColor: "rgba(220,220,220,1)",
-      			pointColor: "rgba(220,220,220,1)",
+      			fillColor: "rgba(243, 166, 28,0.2)",
+      			strokeColor: "rgba(243, 166, 28,1)",
+      			pointColor: "rgba(243, 166, 28,1)",
       			pointStrokeColor: "#fff",
       			pointHighlightFill: "#fff",
-      			pointHighlightStroke: "rgba(220,220,220,1)",
+      			pointHighlightStroke: "rgba(243, 166, 28,1)",
       			data: [165, 159, 180, 300, 156]
       		},
       		{
       			label: "Meu segundo dataset",
-      			fillColor: "rgba(151,187,205,0.2)",
-      			strokeColor: "rgba(151,187,205,1)",
-      			pointColor: "rgba(151,187,205,1)",
+            fillColor: "rgba(2, 21, 30,0.2)",
+      			strokeColor: "rgba(2, 21, 30,1)",
+            pointColor: "rgba(2, 21, 30,1)",
+            showLine: false,
       			pointStrokeColor: "#fff",
       			pointHighlightFill: "#fff",
-      			pointHighlightStroke: "rgba(151,187,205,1)",
+      			pointHighlightStroke: "rgba(2, 21, 30,1)",
       			data: [128, 148, 140, 119, 186]
       		}
       	]
@@ -179,29 +179,31 @@
       	datasets: [
       		{
       			label: "Meu primiro dataset",
-      			fillColor: "rgba(220,220,220,0.2)",
-      			strokeColor: "rgba(220,220,220,1)",
-      			pointColor: "rgba(220,220,220,1)",
+      			fillColor: "rgba(243, 166, 28,0.2)",
+      			strokeColor: "rgba(243, 166, 28,1)",
+      			pointColor: "rgba(243, 166, 28,1)",
       			pointStrokeColor: "#fff",
       			pointHighlightFill: "#fff",
-      			pointHighlightStroke: "rgba(220,220,220,1)",
-      			data: [65, 59, 80, 81, 56]
+      			pointHighlightStroke: "rgba(243, 166, 28,1)",
+      			data: [65, 59, 80, 81, 56],
       		},
       		{
       			label: "Meu segundo dataset",
-      			fillColor: "rgba(151,187,205,0.2)",
-      			strokeColor: "rgba(151,187,205,1)",
-      			pointColor: "rgba(151,187,205,1)",
+      			fillColor: "rgba(2, 21, 30,0.2)",
+      			strokeColor: "rgba(2, 21, 30,1)",
+            pointColor: "rgba(2, 21, 30,1)",
+            showLine: false,
       			pointStrokeColor: "#fff",
       			pointHighlightFill: "#fff",
-      			pointHighlightStroke: "rgba(151,187,205,1)",
-      			data: [28, 48, 40, 19, 86]
+      			pointHighlightStroke: "rgba(2, 21, 30,1)",
+            data: [28, 48, 40, 19, 86]
       		}
       	]
       };
            
       var ctxl = $("#lineChartSites").get(0).getContext("2d");
       var lineChart = new Chart(ctxl).Line(data);
+      lineChart.showLines = false;
 
       var ctxb = $("#barChartDemo").get(0).getContext("2d");
       var barChart = new Chart(ctxb).Bar(data1);
@@ -209,4 +211,4 @@
     </script>
     
   </body>
-</html>su
+</html>

@@ -95,7 +95,7 @@ section p {
 }
 #home-section .post-text p {
 	font-size: 0.9em;
-	opacity: 0.6;
+	/* opacity: 0.6; */
 }
 .post-date .date {
 	font-size: 3em;
