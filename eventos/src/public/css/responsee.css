@@ -58,7 +58,7 @@ td {border-right:1px solid #e0e0e0;}
 }
  .size-1140 .line {
   /* margin:0 auto; */
-  max-width:100em;
+  max-width:100%;
   /* padding:0 0.625em; */
 } 
 .size-960.align-content-left .line,.size-1140.align-content-left .line {margin-left:0;}
